@@ -1,5 +1,5 @@
 # Bad Apple in java
-This is a fork of the Bad Apple demo for TI-84. This code uses the video binary file to print it on the console.
+This is a fork of the Bad Apple demo for TI-84. This code uses the video binary file from the original repository to print the 3:40 minute video on the console.
 
 ## Editing
 
