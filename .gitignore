@@ -4,6 +4,10 @@ util/*
 !util/*.py
 *.8xk
 music/*.asm
+.vscode/
+.settings/
 
 [Tt]humbs.db
 [Dd]esktop.ini
+.classpath
+.project
