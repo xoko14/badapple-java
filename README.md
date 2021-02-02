@@ -1,21 +1,5 @@
-# Bad Apple for TI-84
-This is the source code for the Bad Apple demo for TI-84, which plays back the entire 3:40 Bad Apple video on a TI-83+/84+ SE calculator. Video: https://www.youtube.com/watch?v=6pAeWf3NPNU
-
-The source code includes both the playback code, written in Z80 assembly, and encoders for the video and audio, written in Python.
-
-## Building
-You will need Python 3, SPASM and Rabbitsign to build this demo. If you do not have SPASM or Rabbitsign installed, you can place their binaries in the `./util` directory.
-
-[SPASM](https://wabbit.codeplex.com/releases/view/45088)
-
-[RabbitSign (Win)](http://www.ticalc.org/archives/files/fileinfo/420/42035.html)
-
-[RabbitSign (*nix)](http://www.ticalc.org/archives/files/fileinfo/383/38392.html)
-
-To build, just run `./build.py`. If everything goes successfully, it will produce the final application file `./badapple.8xk` which you can then transfer to your calculator or run on an emulator.
-
-## Transfer Issues
-Calculator file transfer software is unreliable for application files this large. I have only been able to successfully transfer the app using TILP. If you are having problems with TILP crashing, that is probably because you have a version that does not allocate enough memory for applications larger than 50 pages. If this is happening to you, or the transfer is otherwise failing, you can try running `./build_allsizes.py` to generate multiple application files of differing sizes, and try each one until it works.
+# Bad Apple in java
+This is a fork of the Bad Apple demo for TI-84. This code uses the video binary file from the original repository to print the 3:40 minute video on the console.
 
 ## Editing
 
