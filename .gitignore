@@ -6,8 +6,10 @@ util/*
 music/*.asm
 .vscode/
 .settings/
+target/
 
 [Tt]humbs.db
 [Dd]esktop.ini
 .classpath
 .project
+*.jar

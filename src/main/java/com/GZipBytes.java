@@ -35,4 +35,12 @@ public class GZipBytes {
             System.exit(1);
         }
     }
+
+    public byte getByte(int byteNum){
+        return bytes[byteNum];
+    }
+
+    public int getLength(){
+        return bytes.length;
+    }
 }
