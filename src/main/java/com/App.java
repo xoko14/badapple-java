@@ -11,7 +11,11 @@ public class App {
     private static final int heigth = 64;
 
     public static void main(String[] args) {
-        renderFrame(100);
+        System.out.print("CONSOLE CALIBRATION\n"+
+                         "Please, adjust your console settings to fit the picture.\n"+
+                         "Press intro to visualize the picture. After that, press intro again to start.\n");  
+        kbd.nextLine();
+        renderFrame(410);
         kbd.nextLine();
         for (int i = 0; i < video.getLength()/(width*heigth); i++) {
             renderFrame(i);
@@ -30,7 +34,7 @@ public class App {
                 if (video.getByte(j) == 0)
                     frameS+=" ";//black
                 else
-                    frameS+="█";//white
+                    frameS+="\u2588";//white
             }
             frameS+="\n";
         }
