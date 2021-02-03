@@ -34,7 +34,7 @@ public class App {
                 if (video.getByte(j) == 0)
                     frameS+=" ";//black
                 else
-                    frameS+="\u2588";//white
+                    frameS+="\u2588";//white (full block char)
             }
             frameS+="\n";
         }
