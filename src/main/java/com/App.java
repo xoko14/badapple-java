@@ -13,10 +13,10 @@ public class App {
     public static void main(String[] args) {
         renderFrame(100);
         kbd.nextLine();
-        for (int i = 0; i < video.getLength()/width*heigth; i++) {
+        for (int i = 0; i < video.getLength()/(width*heigth); i++) {
             renderFrame(i);
             try {
-                Thread.sleep(33);
+                Thread.sleep(1000/60);//fps
             } catch (InterruptedException e) {
             }
         }
@@ -28,9 +28,9 @@ public class App {
         for (int i = 0; i < heigth * width; i += width) {
             for (int j = startbyte + i; j < startbyte + width + i; j++) {
                 if (video.getByte(j) == 0)
-                    frameS+=" ";
+                    frameS+=" ";//black
                 else
-                    frameS+="*";
+                    frameS+="█";//white
             }
             frameS+="\n";
         }
