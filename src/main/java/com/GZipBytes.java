@@ -1,22 +1,19 @@
 package com;
 
-import java.io.File;
 import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
-import java.io.ByteArrayInputStream;
 import java.util.zip.GZIPInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 
 public class GZipBytes {
     private byte[] bytes;
-    private byte[] compBytes;
 
-    GZipBytes(File file) {
+    GZipBytes(InputStream file) {
         try {
-            compBytes = FileUtils.readFileToByteArray(file);
-            ByteArrayInputStream bin = new ByteArrayInputStream(compBytes);
-            GZIPInputStream gzipper = new GZIPInputStream(bin);
+            //compBytes = FileUtils.readFileToByteArray(file);
+            //ByteArrayInputStream bin = new ByteArrayInputStream(compBytes);
+            GZIPInputStream gzipper = new GZIPInputStream(file);
 
             byte[] buffer = new byte[1024];
             ByteArrayOutputStream out = new ByteArrayOutputStream();

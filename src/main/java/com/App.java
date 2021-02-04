@@ -1,16 +1,16 @@
 package com;
 
-import java.io.File;
+import java.io.InputStream;
 import java.util.Scanner;
+import java.util.concurrent.locks.LockSupport;
 
 public class App {
-    private static File videoPath = new File("./video/frames.bin.gz");
-    private static File audioPath = new File("./music/original/badapple.mp3");
+    private static InputStream videoPath = App.class.getResourceAsStream("frames.bin.gz");
     private static GZipBytes video = new GZipBytes(videoPath);
-    private static AudioPlayer player = new AudioPlayer(audioPath);
     private static Scanner kbd = new Scanner(System.in);
     private static final int width = 96;
     private static final int heigth = 64;
+    private static final int fps = 30;
 
     public static void main(String[] args) {
         long time1;
@@ -21,16 +21,14 @@ public class App {
         renderFrame(410);
         kbd.nextLine();
 
-        player.play();
+        PlayAudio play = new PlayAudio();
+        play.start();
 
         for (int i = 0; i < video.getLength() / (width * heigth); i++) {
-            time1 = System.currentTimeMillis();
+            time1 = System.nanoTime();
             renderFrame(i);
-            time2 = System.currentTimeMillis();
-            try {
-                Thread.sleep(1000 / 30 - (time2 - time1));// fps (1000/desired fps - time taken to render frame)
-            } catch (InterruptedException e) {
-            }
+            time2 = System.nanoTime();
+            LockSupport.parkNanos(1000000000 / fps - (time2 - time1)); // fps (duration of frame in nanosec - time taken to render frame)
         }
     }
 
