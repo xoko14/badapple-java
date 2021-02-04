@@ -11,6 +11,8 @@ public class App {
     private static final int heigth = 64;
 
     public static void main(String[] args) {
+        long time1;
+        long time2;
         System.out.print("CONSOLE CALIBRATION\n"+
                          "Please, adjust your console settings to fit the picture.\n"+
                          "Press intro to visualize the picture. After that, press intro again to start.\n");  
@@ -18,9 +20,11 @@ public class App {
         renderFrame(410);
         kbd.nextLine();
         for (int i = 0; i < video.getLength()/(width*heigth); i++) {
+            time1 = System.currentTimeMillis();
             renderFrame(i);
+            time2 = System.currentTimeMillis();
             try {
-                Thread.sleep(1000/60);//fps
+                Thread.sleep(1000/30-(time2-time1));//fps (1000/desired fps - time taken to render frame)
             } catch (InterruptedException e) {
             }
         }
