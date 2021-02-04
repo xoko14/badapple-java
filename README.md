@@ -7,4 +7,4 @@ This is a fork of the Bad Apple demo for TI-84. This code uses the video binary 
 The source video is contained in `./src/main/java/com/frames.bin.gz`. It simply stores each pixel in one byte, 0 or 1, with a scan order of left to right, then top to bottom, then first frame to last frame, and finally, the entire file is gzipped. Frames are 96x64 pixels.
 
 ### Audio
-The audio is the original version of the song, located in `./src/main/java/com/frames.bin.gz`.
+The audio is the original version of the song, located in `./src/main/java/com/badapple.mp3`.
